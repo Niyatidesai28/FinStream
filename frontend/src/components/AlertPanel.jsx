@@ -14,7 +14,7 @@ function AlertPanel({ alerts, onCreateAlert, notifications, onDismissNotificatio
     setError('')
 
     const price = parseFloat(targetPrice)
-    if (!price || Number.isNaN(price)) {
+    if (!Number.isFinite(price) || price <= 0) {
       setError('Please enter a valid target price.')
       return
     }
@@ -52,7 +52,7 @@ function AlertPanel({ alerts, onCreateAlert, notifications, onDismissNotificatio
       )}
 
       <form className="alert-form" onSubmit={handleSubmit}>
-        <select value={symbol} onChange={(e) => setSymbol(e.target.value)}>
+        <select aria-label="Stock symbol" value={symbol} onChange={(e) => setSymbol(e.target.value)}>
           {SYMBOLS.map((s) => (
             <option key={s} value={s}>
               {s}
@@ -60,13 +60,16 @@ function AlertPanel({ alerts, onCreateAlert, notifications, onDismissNotificatio
           ))}
         </select>
 
-        <select value={condition} onChange={(e) => setCondition(e.target.value)}>
+        <select aria-label="Alert condition" value={condition} onChange={(e) => setCondition(e.target.value)}>
           <option value="above">Price rises above</option>
           <option value="below">Price falls below</option>
         </select>
 
         <input
           type="number"
+          aria-label="Target price"
+          min="0.01"
+          required
           step="0.01"
           placeholder="Target price"
           value={targetPrice}
@@ -78,7 +81,7 @@ function AlertPanel({ alerts, onCreateAlert, notifications, onDismissNotificatio
         </button>
       </form>
 
-      {error && <div className="alert-error">{error}</div>}
+      {error && <div role="alert" className="alert-error">{error}</div>}
 
       <div className="alert-list">
         {alerts.length === 0 && <div className="panel-empty">No alerts yet.</div>}

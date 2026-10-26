@@ -16,7 +16,7 @@ class StockPrice(BaseModel):
 class AlertCreate(BaseModel):
     symbol: str
     condition: Literal["above", "below"]
-    target_price: float = Field(gt=0)
+    target_price: float = Field(gt=0, allow_inf_nan=False)
 
 
 class Alert(BaseModel):
