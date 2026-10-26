@@ -34,3 +34,9 @@ Next: publish repair/docs checkpoint, inspect PR checks, then KAAM. Final commit
 are available via git log; this file cannot contain its own commit hash.
 
 Repair checkpoint: b2dd18abf50c3b2bedda584c36527e12efdc5ef3. Final regression: 13 passed with pytest 9.0.3; compileall and diff checks passed.
+
+Publication checkpoint: repair b2dd18abf50c3b2bedda584c36527e12efdc5ef3 and documentation
+7c69c365bfdac9ded1fa7ec51facfc14e4c46f14 pushed successfully. Draft PR updated.
+Final browser regression after backend restart PASS. GitHub reports no checks; there is
+no Actions workflow in this repository. Phase 17 COMPLETED for feasible local verification
+and publication; deferred features/security limitations remain as listed above.
