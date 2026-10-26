@@ -1,0 +1,31 @@
+# Original tracked-file inventory
+
+- `.env.example`
+- `.gitignore`
+- `backend/core/__init__.py`
+- `backend/core/config.py`
+- `backend/main.py`
+- `backend/models/__init__.py`
+- `backend/models/schemas.py`
+- `backend/requirements.txt`
+- `backend/routes/__init__.py`
+- `backend/routes/alerts.py`
+- `backend/routes/stocks.py`
+- `backend/services/__init__.py`
+- `backend/services/alert_service.py`
+- `backend/services/price_generator.py`
+- `backend/services/websocket_manager.py`
+- `frontend/index.html`
+- `frontend/package-lock.json`
+- `frontend/package.json`
+- `frontend/src/App.css`
+- `frontend/src/App.jsx`
+- `frontend/src/api/api.js`
+- `frontend/src/components/AlertPanel.jsx`
+- `frontend/src/components/ConnectionStatus.jsx`
+- `frontend/src/components/LiveChart.jsx`
+- `frontend/src/components/Navbar.jsx`
+- `frontend/src/components/StockCard.jsx`
+- `frontend/src/components/StockGrid.jsx`
+- `frontend/src/main.jsx`
+- `frontend/vite.config.js`

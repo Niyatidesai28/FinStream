@@ -22,7 +22,11 @@ export async function createAlert(alert) {
 
   if (!res.ok) {
     const errorBody = await res.json().catch(() => ({}))
-    throw new Error(errorBody.detail || 'Failed to create alert')
+    const detail = errorBody.detail
+    const message = Array.isArray(detail)
+      ? detail.map((item) => item.msg).filter(Boolean).join('; ')
+      : typeof detail === 'string' ? detail : ''
+    throw new Error(message || 'Failed to create alert')
   }
 
   return res.json()

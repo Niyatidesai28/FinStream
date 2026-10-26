@@ -1,0 +1,24 @@
+# Vocabulary anchored to FinStream
+
+- Component: a React function returning UI, e.g. StockCard.
+- Prop: parent-provided value/callback, e.g. onSelect.
+- State: render-driving memory, e.g. selectedSymbol in App.
+- Ref: mutable non-render handle, e.g. wsRef.
+- Effect: synchronization with outside systems, e.g. socket creation/cleanup.
+- REST: resource-oriented HTTP interface; alerts creation is POST.
+- JSON: wire representation of objects/arrays, not a database.
+- Schema: accepted field types/constraints, e.g. AlertCreate.
+- Coroutine: async function that can suspend at await.
+- Event loop: schedules asynchronous work; CPU blocking stalls other tasks.
+- WebSocket: long-lived bidirectional connection; this app mostly sends server updates.
+- Snapshot: current prices without mutation, PriceGenerator.snapshot.
+- Random walk: current price plus random bounded delta; not market prediction.
+- Singleton: shared module-level service instance within one Python process.
+- UUID: generated identifier; not a permission credential.
+- CORS: browser origin policy, not authentication.
+- Optimistic UI: show temporary alert before server success, then reconcile or roll back.
+- Regression test: proves a previously observed defect stays repaired.
+- Persistence: data surviving process restart; absent here.
+- Latency: time until an update is visible; two-second sleep is only part of it.
+- Backpressure: slow consumers delaying production/sending; serial broadcast is vulnerable.
+- Idempotence: repeated operation has same effect; POST currently creates new UUID each time.
